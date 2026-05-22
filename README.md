@@ -1,10 +1,10 @@
-# 📘 RAG-Based Technical Documentation Assistant
+a# RAG-Based Technical Documentation Assistant
 
 A state-of-the-art **Retrieval-Augmented Generation (RAG)** system equipped with a **self-corrective LangGraph workflow**, custom document ingestion, query classification, real-time citation tracking, short-term session memory, and web search fallbacks. Built for the **Express Analytics AI/ML Engineer Intern Take-Home Assignment**.
 
 ---
 
-## 🚀 Key Features & Architectural Highlights
+##  Key Features & Architectural Highlights
 
 1. **Self-Corrective LangGraph Workflow**: Implemented as a stateful cyclic graph with multiple intelligent nodes that dynamically grade retrieved documents and, if needed, cycle back to rewrite queries with alternate keyword variants up to a strict retry limit.
 2. **Multi-Source Ingestion Pipeline**: Ingests files (Markdown, Text) and public HTML web pages (URLs). Content is parsed and stripped of boilerplate tags using `BeautifulSoup` and loaded dynamically.
@@ -17,7 +17,7 @@ A state-of-the-art **Retrieval-Augmented Generation (RAG)** system equipped with
 
 ---
 
-## 📐 System Architecture & Workflow
+##  System Architecture & Workflow
 
 Here is how data flows through the LangGraph State Machine:
 
@@ -42,7 +42,7 @@ graph TD
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Language**: Python 3.10+
 * **Orchestration**: `LangGraph`, `LangChain`
@@ -54,7 +54,7 @@ graph TD
 
 ---
 
-## ⚙️ Setup & Installation
+##  Setup & Installation
 
 ### 1. Clone & Navigate
 Ensure you are in the project root directory:
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🏃 Running the Application
+##  Running the Application
 
 We have created a convenient runner script `dev.py` in the root directory to handle common development workflows.
 
@@ -98,6 +98,42 @@ python dev.py ui
 ```
 Open **`http://localhost:7860`** in your browser.
 
+-Conceptual Queries
+```
+What is LangGraph used for
+```
+```
+Why do developers use Pydantic
+```
+- How‑to Queries
+```
+Show me a Pydantic model with validation
+```
+```
+How do I run a FastAPI app with Uvicorn
+```
+- Troubleshooting Queries
+```
+Why does FastAPI return 422 for invalid path parameters
+```
+```
+What happens if a Pydantic field fails validation
+```
+- API Reference Queries
+```
+Explain the Field function in Pydantic
+```
+```
+What are query parameters in FastAPI
+```
+- Fallback / Web Search
+
+```
+What is the latest version of LangGraph
+```
+```
+Who maintains Pydantic
+```
 ### C. Launch the FastAPI Backend Server
 This runs the production-ready REST API backend with automatic Swagger UI documentation:
 ```bash
@@ -107,7 +143,7 @@ Open **`http://localhost:8000/docs`** to explore endpoints interactively!
 
 ---
 
-## 📡 Example API Requests & Responses
+##  Example API Requests & Responses
 
 Below are standard API integration snippets for interacting with the FastAPI server:
 
@@ -194,7 +230,7 @@ curl -X POST "http://localhost:8000/ingest" \
 
 ---
 
-## 🧠 Design Decisions, Tradeoffs, and In-depth Write-up
+##  Design Decisions, Tradeoffs, and In-depth Write-up
 
 ### 1. Cyclic Self-Corrective Graph Workflow
 Unlike simple linear pipelines (Retrieve -> Generate), this project employs **LangGraph's cyclic StateGraph** containing conditional routing.
@@ -212,7 +248,7 @@ We use a local `Chroma` database and local HuggingFace embeddings (`all-MiniLM-L
 
 ---
 
-## 🔮 What We Would Improve With More Time
+##  What We Would Improve With More Time
 
 1. **Hybrid Ingestion Formats**: Add support for parsing PDF structures, structured JSON specs, and automatic API reference crawl maps.
 2. **Persistent DB Feedback**: Replace the local `feedback.json` file with a lightweight relational PostgreSQL or SQLite database, enabling complex query filtering, review interfaces, and analytics.
