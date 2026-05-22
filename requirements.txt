@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langgraph
+chromadb
+sentence-transformers
+gradio
+python-dotenv
+requests
+langchain-google-genai
+BeautifulSoup
