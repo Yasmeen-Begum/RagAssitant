@@ -1,4 +1,4 @@
-a# RAG-Based Technical Documentation Assistant
+## RAG-Based Technical Documentation Assistant
 
 A state-of-the-art **Retrieval-Augmented Generation (RAG)** system equipped with a **self-corrective LangGraph workflow**, custom document ingestion, query classification, real-time citation tracking, short-term session memory, and web search fallbacks. Built for the **Express Analytics AI/ML Engineer Intern Take-Home Assignment**.
 
